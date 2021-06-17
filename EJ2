@@ -1,0 +1,70 @@
+using System;
+
+namespace Apli2_III
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char op= 's';
+            int v;
+            string buscar;
+            string [,] vec= new string[5, 15];
+
+            while(op=='s')
+            { 
+            Console.WriteLine("1. Ingresar Contacto");
+            Console.WriteLine("2. Mostrar Contactos");
+            Console.WriteLine("3. Buscar Contacto");
+            Console.WriteLine("4. Salir");
+            Console.Write("Opción: ");
+            v = int.Parse(Console.ReadLine());
+
+                if (v == 1)
+                {
+                    for (int f = 0; f < 3; f++)
+                    {
+                        for (int c = 0; c < 5; c++)
+                        {
+                            Console.Write("Ingrese Nombre: ");
+                            Console.Write("Ingrese Apellidos: ");
+                            Console.Write("Ingrese Dirección: ");
+                            Console.Write("Ingrese Telefono: ");
+                            vec [f,c]= (Console.ReadLine());
+
+                        }
+                    }
+                }
+                else if (v == 2)
+                {
+                    for (int x = 0; x < 3; x++)
+                    {
+                        for (int y = 0; y < 5; y++)
+                        {
+                            Console.Write(vec[x, y]);
+                        }
+                    }
+                }
+                else if (v == 3)
+                {
+                    Console.Write("Ingrese contacto a buscar: ");
+                    buscar =(Console.ReadLine());
+                    for (int p = 0; p < 3; p++)
+                    {
+                        for (int t = 0; t < 1; t++)
+                        {
+                            if (buscar == vec[p, t])
+                            {
+                                Console.WriteLine("El contacto " + buscar + " existe");
+                            }
+                        }
+                    }
+                }
+                if(v==4)
+                {
+                    op = 'n';
+                }
+                }
+            }
+        }
+    }
